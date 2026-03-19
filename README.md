@@ -6,6 +6,25 @@ The setup is similar to [Jupyter installation](https://github.com/Systems-Modeli
 
 In this project Jupyter runs as root in the container but when one uses podman the process runs as the user that spawns the container process.
 
+You can build it with 
+
+```
+podman -t sysmlv2-jupyter build .
+```
+
+This will take a while as miniforge is installed and then conda is run to install Jupyter and the appropriate sysmlv2 kernel. 
+
+You could then run the container with:
+
+```
+podman run -v ./notebooks:/jupyter -p8889:8888 sysmlv2-jupyter
+
+```
+
+( I already run a Jupyterlab instance on port 8888 so I am redirecting things.)
+
+Then you could navigate to http:\\localhost:8889. You can use the password 'systems.engineering' to get access. Obviously this is *not* for production. 
+
 ## SysMLv2 API Services 
 
 I am working on compiling and running the SysML-v2 API services. 
