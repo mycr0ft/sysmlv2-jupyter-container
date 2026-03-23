@@ -12,7 +12,7 @@ You can build it with
 podman -t sysmlv2-jupyter build .
 ```
 
-This will take a while as miniforge is installed and then conda is run to install Jupyter and the appropriate sysmlv2 kernel. 
+This will take a while as miniforge is installed and then conda is run to install Jupyter and the appropriate sysmlv2 kernel. On some platforms the step with installing `jupyter labextension @system-modeling/jupyter-sysml@0.57.0` is broken and will not build. On Linux 64 it seems to work fine. 
 
 You could then run the container with:
 

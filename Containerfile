@@ -1,4 +1,4 @@
-FROM debian:trixie
+FROM debian:stable-slim
 RUN apt -y update && apt install -y curl
 
 WORKDIR /miniforge-install
